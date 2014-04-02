@@ -1,0 +1,17 @@
+<h2>Speech Recognition</h2>
+
+<p>The basic plan...</p>
+
+<pre>
+        var rec = spawn("C:/Program Files (x86)/sox-14-4-1/sox",
+        [ '-b', 16, '-d', '-t', 'flac', '-', 'rate',
+        16000, 'channels', 1, 'silence', 1,
+        '0.1', '0.1%', 1, .0', '0.1%' ], 'pipe');
+
+        rec.stdout.on('readable', onAudioReady);
+        rec.stdout.setEncoding('binary');
+        rec.stdout.on('data', onAudioData);
+        rec.on('close', onAudioClose);
+</pre>
+
+<p>And then send the audio buffer to Google!</p>

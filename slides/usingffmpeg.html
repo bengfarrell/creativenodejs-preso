@@ -1,0 +1,11 @@
+<h2>Using FFMPEG</h2>
+
+<p>FFMPEG is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec -
+    the leading audio/video codec library.</p>
+
+<pre>
+    var ffmpeg = require('ffmpeg-node'),
+    ffmpeg.exec(["-i", infile, "-ab", "128k", outfile], onComplete);
+</pre>
+
+<p>(we're cheating and using an NPM module called ffmpeg-node)</p>
