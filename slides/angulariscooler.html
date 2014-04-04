@@ -1,0 +1,25 @@
+<h2>AngularJS is cooler</h2>
+(with direct Node.js file access)
+
+        <br /><br />
+
+&lt;myfiles&gt;&lt;/myfiles&gt;
+
+<pre>
+
+app.directive('myfiles', function () {
+    return {
+        restrict: 'E',
+        link: function (scope, element, attrs) {
+            var fs = require('fs');
+            fs.readdir('somedirectory', function (err, files) {
+                files.forEach( function (file) {
+                ... add to element HTML!
+       }
+     });
+   });
+});
+        }
+    }
+});
+</pre>
