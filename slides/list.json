@@ -1,5 +1,5 @@
 [
-    "index.md",
+    "index.html",
     "badassrockstartech.html",
     "non-blocking-io-stuff.html",
     "ilikejs.html",
@@ -42,5 +42,20 @@
     "unlimitedpower.html",
     "angulariscool.html",
     "angulariscooler.html",
-    "angulariscoolest.html"
+    "angulariscoolest.html",
+    "bluetooth.html",
+    "iot.html",
+    "physicalinteraction.html",
+    "touchlessinteraction.html",
+    "touchlesswithoutsensors.html",
+    "isnodespecial.html",
+    "proof.html",
+    "whatifitdoesntexist.html",
+    "makeanaddon.html",
+    "compileyouraddon.html",
+    "nodecopter.html",
+    "nodebots.html",
+    "makenormalstufftoo.html",
+    "makecoolstuff.html"
+
 ]

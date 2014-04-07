@@ -1,0 +1,20 @@
+<h2>Making a Node.js Add On</h2>
+<p><a href="https://gist.github.com/bengfarrell/4440739">Example Gist</a></p>
+
+<pre>
+    Handle<Value> getRandomCoords2D(const Arguments& args) {
+        HandleScope scope;
+
+        Local<Object> obj = Object::New();
+        obj->Set(String::NewSymbol("x"), Number::New( 1 + (rand() % xBound->IntegerValue() )));
+        obj->Set(String::NewSymbol("y"), Number::New( 1 + (rand() % yBound->IntegerValue() )));
+
+        return scope.Close(obj);
+    }
+
+    void init(Handle<Object> target) {
+        target->Set(String::NewSymbol("getRandomCoords2D"),
+        FunctionTemplate::New(getRandomCoords2D)->GetFunction());
+    }
+    NODE_MODULE(randomcoords, init)
+</pre>
