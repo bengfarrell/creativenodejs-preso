@@ -1,0 +1,29 @@
+body {
+    background: #add9e4;
+    background: -moz-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #f7fbfc), color-stop(100%, #add9e4));
+    background: -webkit-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+    background: -o-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+    background: -ms-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+    background: radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+    background-color: #f7fbfc;
+}
+
+pre {
+    width: 100%;
+    overflow: auto;
+}
+
+myfiles ul {
+    height: 250px;
+    background-color: rgba(0, 93, 220, 0.14);
+    overflow-y: scroll;
+
+}
+
+myfiles li {
+    list-style: none;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #606060;
+}

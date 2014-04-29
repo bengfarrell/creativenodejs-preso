@@ -1,17 +1,3 @@
-<h2>AngularJS is cool</h2>
+<h2>AngularJS is cool <a href="examples/angular_is_cool.html" target="_blank">(+)</a></h2>
 
 &lt;myfiles&gt;&lt;/myfiles&gt;
-
-<pre>
-
-app.directive('myfiles', function ($http) {
-    return {
-        restrict: 'E',
-        link: function (scope, element, attrs) {
-            $http({method: 'GET', url: 'http://someservice.com').then(function(result) {
-                element.html(result)
-            });
-        }
-    }
-});
-</pre>

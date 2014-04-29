@@ -1,0 +1,18 @@
+<h2>AngularJS + Node FileSystem</h2>
+
+<myfiles></myfiles>
+
+
+<script>
+    angular.module('docsSimpleDirective', [])
+            .controller('Controller', ['$scope', function($scope) {
+                $scope.customer = {
+                    me: "hi"
+                };
+            }])
+            .directive('myfiles', function() {
+                return {
+                    template: 'Name: {{me}} Address: {{me}}'
+                };
+            });
+</script>
