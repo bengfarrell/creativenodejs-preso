@@ -11,6 +11,9 @@
         "load-grunt-tasks": "~0.2.0",
         "grunt-coffeelint": "0.0.7"
     },
+    "dependencies": {
+        "opencv": "git+http://github.com/notcoffeetable/node-opencv.git"
+    },
     "engines": {
         "node": ">=0.8.0"
     },
