@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Make It So</title>
+    <link rel="stylesheet" href="../css/example.css"/>
+    <style>
+        h1, h4 {
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            border-style: solid;
+            border-width: 1px;
+            border-color: #66bbff;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .image {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script>
+        var MakeItSo = require('makeitso');
+
+        // Setup google speech
+        var opts = {
+            soxLocation: "C:/Program Files (x86)/sox-14-4-1/sox",
+            verbose: false,
+            continuous: true,
+            silenceTrimThresholdStart: '5%',
+            silenceTrimThresholdEnd: '5%',
+            service: "google",
+            google_key: "AIzaSyCnl6MRydhw_5fLXIdASxkLJzcJh5iX0M4"
+        }
+
+        var makeitso = new MakeItSo(opts);
+
+        makeitso.on('speechStart', function() {
+            $(".status").html("listening");
+        });
+
+        makeitso.on('speechStop', function() {
+            $(".status").html("sending");
+        });
+
+        makeitso.on('speechReady', function() {
+            $(".status").html("ready");
+        });
+
+        makeitso.on('error', function(err) {});
+
+        makeitso.on('speechResult', function(results) {
+            $(".speech").html(results);
+        });
+
+        makeitso.addCommand(["make it so"], function(result) {
+            if (result.transcript.indexOf("google image") != -1) {
+                var q = result.transcript;
+                q = q.replace("make it so", "");
+                q = q.replace("google image", "");
+                $('.query').html(q);
+                $.getJSON('https://ajax.googleapis.com/ajax/services/search/images?q=' + q + '&v=1.0&callback=?',
+                        function(json) {
+                            $('.image').css('background-image', 'url(' + json.responseData.results[0].url + ')');
+                            $('.image').css('background-position-x', 'center');
+                            $('.image').css('background-repeat', 'no-repeat');
+                        });
+            }
+        });
+        makeitso.start();
+    </script>
+</head>
+<body>
+    <h1 class="speech"></h1>
+    <h4 class="status"></h4>
+    <div class="image"></div>
+    <h4 class="query"></h4>
+</body>
+</html>

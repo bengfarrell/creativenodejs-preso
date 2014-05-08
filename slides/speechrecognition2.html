@@ -1,8 +1,8 @@
-<h2>Speech Recognition</h2>
+<h2>Speech Recognition <a href="examples/makeitso.html">(+)</a> </h2>
 
 <p>The basic plan...</p>
 
-<pre>
+<pre><code>
         var rec = spawn("C:/Program Files (x86)/sox-14-4-1/sox",
         [ '-b', 16, '-d', '-t', 'flac', '-', 'rate',
         16000, 'channels', 1, 'silence', 1,
@@ -12,6 +12,6 @@
         rec.stdout.setEncoding('binary');
         rec.stdout.on('data', onAudioData);
         rec.on('close', onAudioClose);
-</pre>
+</code></pre>
 
 <p>And then send the audio buffer to Google!</p>

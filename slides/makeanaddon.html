@@ -1,7 +1,7 @@
 <h2>Making a Node.js Add On</h2>
 <p><a href="https://gist.github.com/bengfarrell/4440739">Example Gist</a></p>
 
-<pre>
+<pre><code>
     Handle<Value> getRandomCoords2D(const Arguments& args) {
         HandleScope scope;
 
@@ -17,4 +17,4 @@
         FunctionTemplate::New(getRandomCoords2D)->GetFunction());
     }
     NODE_MODULE(randomcoords, init)
-</pre>
+</code></pre>
