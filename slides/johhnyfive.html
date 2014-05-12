@@ -1,0 +1,20 @@
+<h2>Johhny 5</h2>
+<ul>
+    <li>Arduino Sketch lets you update your Arduino</li>
+    <li>Sense things, make LEDs blink, etc</li>
+    <li>J5 creates an always open bridge with Node</li>
+</ul>
+
+<pre>
+<code>
+    var five = require("johnny-five"),
+    board = new five.Board();
+
+    board.on("ready", function() {
+
+    // Create an Led on pin 13 and strobe it on/off
+    (new five.Led(13)).strobe();
+
+    });
+</code>
+</pre>
