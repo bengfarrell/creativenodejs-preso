@@ -10,7 +10,8 @@
         app.directive('facedetect', function ($http) {
             return {
                 restrict: 'E',
-                link: function (scope, element, attrs) {
+                link: function (scope,
+                                element, attrs) {
                     var cv = require('opencv');
                     var fs = require('fs');
                     var gui = require('nw.gui');
