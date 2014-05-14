@@ -12,13 +12,13 @@
                 restrict: 'E',
                 link: function (scope,
                                 element, attrs) {
+                    element.html("<img src='' />");
                     var cv = require('opencv');
                     var fs = require('fs');
                     var gui = require('nw.gui');
                     var camera = new cv.VideoCapture(0);
                     setInterval(function() {
                         gui.App.clearCache();
-                        element.html("<img src='' />");
                         camera.read(function(im) {
                             im.detectObject("node_modules/opencv/data/haarcascade_frontalface_alt.xml", {}, function(err, faces){
 
