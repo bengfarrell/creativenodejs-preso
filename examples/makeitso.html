@@ -33,7 +33,9 @@
             continuous: true,
             silenceTrimThresholdStart: '5%',
             silenceTrimThresholdEnd: '5%',
-            service: "google",
+            service: "att",
+            att_client_id: "7tzenk9dzyhrnswaltae7jw1uxfuhc2u",
+            att_client_secret: "5rgiy0jtvi9brztexk1afifnubgqbpsp",
             google_key: "AIzaSyCnl6MRydhw_5fLXIdASxkLJzcJh5iX0M4"
         }
 
@@ -57,11 +59,13 @@
             $(".speech").html(results);
         });
 
-        makeitso.addCommand(["make it so"], function(result) {
-            if (result.transcript.indexOf("google image") != -1) {
+        makeitso.addCommand(["google"], function(result) {
+            if (result.transcript.indexOf("google") != -1) {
                 var q = result.transcript;
-                q = q.replace("make it so", "");
-                q = q.replace("google image", "");
+                //q = q.replace("make it so", "");
+                // THIS DEMO IS COMPLETELY AWFUL WITH ATT, LUCKY IF IT HEARS US SAY "GOOGLE"
+                // TO BAD THE KEY I STOLE FOR THE GOOGLE API IS NO LONGER GOOD
+                q = q.replace("google", "");
                 $('.query').html(q);
                 $.getJSON('https://ajax.googleapis.com/ajax/services/search/images?q=' + q + '&v=1.0&callback=?',
                         function(json) {
